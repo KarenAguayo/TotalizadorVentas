@@ -7,6 +7,9 @@ function descuento(neto) {
     if((neto > 1000) && (neto <=3000)){
         respuesta = 5;
     }
+    if((neto > 3000) && (neto <=7000)){
+        respuesta = 7;
+    }
 
     return respuesta;
   }
