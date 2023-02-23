@@ -3,7 +3,8 @@ import precio from "./precio.js";
 import estado from "./estado.js";
 import neto from "./neto.js";
 import impuesto from "./impuesto.js";
-
+import descuento from "./descuento.js";
+import precioTotal from "./preciosTotales.js";
 const cantidades = document.querySelector("#cantidad-items");
 const form = document.querySelector("#cantidad-form");
 const div = document.querySelector("#cantidad-div");
@@ -36,6 +37,9 @@ form3.addEventListener("submit", (event) => {
   div3.innerHTML = "<p> Estado: " + EstadosList + 
                    "<p> Impuesto: " + estado(EstadosList) +
                    "<p> Precio Neto: " + neto(precio, cantidad) +
+                   "<p> Tasa de Descuento con 1000: " + descuento(neto(precio, cantidad)) +
+                   "<p> Precio Total: " + precioTotal(neto(precio, cantidad), impuesto(estado(EstadosList), neto(precio, cantidad)), descuento(neto(precio, cantidad))) +
+                   "<p><br>" +
                    "<p> Impuesto Total para CA: " + impuesto(estado(estado_1), neto(precio, cantidad)) +
                    "<p> Impuesto Total para TX: " + impuesto(estado(estado_2), neto(precio, cantidad)) +
                    "<p> Impuesto Total para AL: " + impuesto(estado(estado_3), neto(precio, cantidad)) +
