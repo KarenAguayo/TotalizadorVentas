@@ -1,15 +1,24 @@
-import sumar from "./sumador";
-
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+import item from "./item.js";
+import precio from "./precio.js";
+const items = document.querySelector("#cantidad-items");
+const form = document.querySelector("#cantidad-form");
+const div = document.querySelector("#cantidad-div");
+const precios = document.querySelector("#precio-items");
+const form2 = document.querySelector("#precio-form");
+const div2 = document.querySelector("#precio-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const ItemsNumber = document.querySelector("#cantidad-items");
+  
+  div.innerHTML = "<p>" + item(ItemsNumber) + "</p>";
+});
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+form2.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const PreciosNumber = Number.parseInt(precios.value);
+
+  div2.innerHTML = "<p>" + precio(PreciosNumber) + "</p>";
 });
